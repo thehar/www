@@ -5,3 +5,7 @@
 
 2. Get Google Analytics working on G Suite
 > #googleAnalytics = "trackingcode"
+
+3. Create `www` repo to replace `thehar.com` on Github
+
+4. Archive `thehar.com` entries from prior website.
