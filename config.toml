@@ -12,7 +12,7 @@ category = "categories"
 
 [params]
 description = "Openly gay engineer based in San Francisco"
-keywords = ["workhack", "git", "notes", ""]
+keywords = ["workhack", "git", "notes", "innerthoughts"]
 author = "Harley Alaniz"
 sharingicons = true
 displayauthor = true
