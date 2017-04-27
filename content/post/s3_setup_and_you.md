@@ -1,6 +1,6 @@
 +++
 categories = ["tools"]
-date = "2016-04-15"
+date = "2016-04-27"
 tags = ["aws", "s3", "hugo", "terraform","travis-ci", "namecheap"]
 title = "Setup for Changin Times"
 
@@ -212,4 +212,4 @@ doesn't allow you to actually 'sync'. Meaning if files are removed from your
 blog, their deploy step doesn't remove them, and all files are always uploaded
 to the bucket, even if they haven't changed, slowing down the deploy, and costing you money.
 
-### Some credit belongs to continuousfailure.com for this post
+#### Some credit belongs to continuousfailure.com for this post
