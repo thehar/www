@@ -21,3 +21,4 @@ Some fun facts about [Hugo](http://gohugo.io/):
 Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/thehar/www/issues/new) or [ask me on Twitter](https://twitter.com/thehar).
 
 Thanks for reading!
+- thehar
