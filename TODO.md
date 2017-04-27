@@ -15,3 +15,5 @@
 6. Change Favicon to something more branded. Also include some #003366 color into the icons.
 
 7. Add 404 and 500 pages to theme since they seem to be missing and are boring.
+
+8. Lets test Codeship free on this repo as well since we are using it at Upwork.
