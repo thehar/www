@@ -1,10 +1,12 @@
 +++
 tags = ["innerthoughts"]
 categories = ["innerthoughts"]
-date = "2017-04-15 09:43:00 +03:00"
+date = "2017-04-15"
 title = "Better, faster, stronger"
 
 +++
+
+HELLLOOOO
 
 It all started with a random late night at Upwork preparing for a massive site "forklift" to AWS from our very outdated datacenter.  I knew vacation would be needed after said migration. So I booked and began my 15 day vacation to Iceland, Germany & Spain a few days after 48 hours of zero downtime.  On my flight to Germany, I decided to re-launch all of thehar.com into a static site and to `dogfood` it myself.
 
