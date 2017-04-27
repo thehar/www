@@ -46,6 +46,14 @@ Options tagged off demonizing hugo above:
 -1313 means to serve everything on port 1313.
 ```
 
+### Troubleshooting hugo sites
+1. Purge the public/ directory.
+2. Run the built in web server in watch mode.
+3. Open your site in a browser.
+4. Update the theme/pages.
+5. Glance at your browser window to see changes.
+6. Return to step 4.
+
 ### Contributing
 1. Create a local branch to push to Github.
 2. Create a new issue on https://www.github.com/thehar/www/issues/new

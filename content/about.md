@@ -3,10 +3,11 @@
 date = "2017-04-15"
 title = "About Harley"
 menu = "main"
+description = "Harley Alaniz - DevOps Architect"
 
 +++
 
-* This is a place for me to store all the things I try to remember from work/life/hacking or things I find interesting. Feel free to hit me up with any questions and/or permission to post content.
+This is a place for me to store all the things I try to remember from work/life/hacking or things I find interesting. Feel free to hit me up with any questions and/or permission to post content.
 
 Learn more and contribute on [GitHub](https://github.com/thehar/www).
 
