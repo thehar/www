@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Innerthoughts on Harley Alaniz | DevOps Architect</title>
+    <link>https://thehar.com/categories/innerthoughts/index.xml</link>
+    <description>Recent content in Innerthoughts on Harley Alaniz | DevOps Architect</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2017 | Follow on &lt;a href=&#34;https://twitter.com/thehar&#34; target=&#34;_blank&#34;&gt;Twitter&lt;/a&gt; | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <atom:link href="https://thehar.com/categories/innerthoughts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Better, faster, stronger</title>
+      <link>https://thehar.com/post/changin_times/</link>
+      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/post/changin_times/</guid>
+      <description>
+
+&lt;p&gt;HELLLOOOO&lt;/p&gt;
+
+&lt;p&gt;It all started with a random late night at Upwork preparing for a massive site &amp;ldquo;forklift&amp;rdquo; to AWS from our very outdated datacenter.  I knew vacation would be needed after said migration. So I booked and began my 15 day vacation to Iceland, Germany &amp;amp; Spain a few days after 48 hours of zero downtime.  On my flight to Germany, I decided to re-launch all of thehar.com into a static site and to &lt;code&gt;dogfood&lt;/code&gt; it myself.&lt;/p&gt;
+
+&lt;p&gt;Lets get started.  First things first, DNS. Cloudflare offers a free service tier and will terminate SSL for you.  Sure there&amp;rsquo;s &lt;code&gt;LetsEncrypt&lt;/code&gt;, but this is more fun and you can make your site more robust in the future.  Lets make Cloudflare authoritative for the entire domain and proxy off www/non-www to S3.  I&amp;rsquo;d like to not worry about &lt;code&gt;uploading&lt;/code&gt; or &lt;code&gt;removing&lt;/code&gt; content and re-generating all the static content all the time, so lets use AWS Lambda to do our dirty work.  Lamba will do all of the things you tell it to in AWS without server(s) or will orchestrate EC2 compute nodes for you. The biggest thing here is that you pay for the &lt;em&gt;time&lt;/em&gt; spent reacting or processing.  You don&amp;rsquo;t have to turn up completely new EC2 nodes or use Chef (like I normally would).&lt;/p&gt;
+
+&lt;p&gt;In order to get this working, we&amp;rsquo;ll need to have an &lt;code&gt;input&lt;/code&gt; bucket in S3 that you can put your non-generated assets into.  I suggest &lt;code&gt;input.domainname.com&lt;/code&gt; just for ease of remembering what the hell these things are when you open S3&amp;rsquo;s console.  Next you&amp;rsquo;ll need to create two buckets in S3 to serve up &lt;code&gt;www.domainname.com&lt;/code&gt; and &lt;code&gt;domainname.com&lt;/code&gt;.  I prefer to keep things on the root domain and not serve up www traffic to everyone, although you can re-direct however you&amp;rsquo;d like.  One bucket needs to forward to the other in some shape or form S3&amp;rsquo;s silliness.&lt;/p&gt;
+
+&lt;h2 id=&#34;testing-hugo-locally&#34;&gt;Testing Hugo locally:&lt;/h2&gt;
+
+&lt;p&gt;I make the assumption that all of your local development is done on MacOS, 10.12.3.&lt;/p&gt;
+
+&lt;h3 id=&#34;dependencies&#34;&gt;Dependencies&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[Homebrew]
+*  brew install awscli npm PyYAML make
+*  brew cask install hugo
+
+[Cloudflare]
+* ROOT DNS
+* www.ROOT DNS
+
+[AWS]
+* IAM role for Lamba functions
+* Lamba function to add/remove
+* S3 buckets
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When you&amp;rsquo;re ready to test out your changes and run a local web server, feel free to open Terminal.app and run:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;hugo server -wvD --port 1313&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Options tagged off demonizing hugo above:
+-w means to watch the directory and recreate as needed.
+-v means to verbosely state what is going on in the web server.
+-D means to include drafted posts you may have created.
+-1313 means to serve everything on port 1313.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;contributing&#34;&gt;Contributing&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create a local branch to push to Github.&lt;/li&gt;
+&lt;li&gt;Create a new issue on &lt;a href=&#34;https://www.github.com/thehar/www/issues/new&#34;&gt;https://www.github.com/thehar/www/issues/new&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Push your branch to Github and cre&lt;/li&gt;
+&lt;li&gt;Create a pull request &lt;a href=&#34;https://www.github.com/thehar/www/pr/new&#34;&gt;https://www.github.com/thehar/www/pr/new&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
