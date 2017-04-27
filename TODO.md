@@ -11,3 +11,5 @@
 4. Archive `thehar.com` entries from prior website.
 
 5. Create a Makefile or Rakefile to automate more.
+
+6. Change Favicon to something more branded. Also include some #003366 color into the icons.

@@ -33,6 +33,12 @@ build website - you simply need a static Go binary.
 Follow [this introduction](http://gohugo.io/overview/introduction/) and within
 two minutes you should be well on your way to setting up a blog.
 
+```
+Side funny note: Don't use Wordpress, ever. Unless you want to pay to host it
+with wordpress.com.  It's a pile of crap and you have a much larger attack vector
+to deal with when you host a WP site yourself. (Feel free to email and ask about this)
+```
+
 # Step 3) Create an AWS Account.
 
 AWS is a great way to serve up your website for pennies in the first year.  You get
@@ -42,10 +48,16 @@ But for now simply create a new account, and figure out away to get yourself
 some admin keys (AWS_ACCESS_KEY and AWS_SECRET_KEY) because you will need these
 to setup your AWS account to host this blog.
 
+You will need to install `aws-cli` in order to run `aws configure` and maintain
+your keys locally correctly.  Please see the [Changin Times] entry from 04-15-2017.
+
 # Step 4) Use a Terraform script to setup your AWS account for the blog.
 
 I built you out a simple [Terraform](https://terraform.io/) script which you
 can use to create all the required things to host a website in S3.
+
+I personally use `us-west-2`, Oregon's AWS region, because it is the cheapest and
+you get all the shiny new products.
 
 Here is the [script](https://github.com/thehar/www/blob/master/tf/setup.tf):
 ```terraform
@@ -160,8 +172,7 @@ If you really are against using Terraform to setup this configuration you can
 of course always use [the guide](http://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html)
 from Amazon directly.
 
-Don't worry, we'll have more blogs about Terraform and other 'Cloud DSLs' in the
-future.
+Don't worry, we'll have more blogs about Terraform and other AWS + CM tools.
 
 # Step 5)
 
@@ -201,4 +212,4 @@ doesn't allow you to actually 'sync'. Meaning if files are removed from your
 blog, their deploy step doesn't remove them, and all files are always uploaded
 to the bucket, even if they haven't changed, slowing down the deploy, and costing you money.
 
-## Credit belongs to continuousfailure.com for this post
+### Some credit belongs to continuousfailure.com for this post
