@@ -57,6 +57,17 @@
 -1313 means to serve everything on port 1313.
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;h3 id=&#34;troubleshooting-hugo-sites&#34;&gt;Troubleshooting hugo sites&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Purge the public/ directory.&lt;/li&gt;
+&lt;li&gt;Run the built in web server in watch mode.&lt;/li&gt;
+&lt;li&gt;Open your site in a browser.&lt;/li&gt;
+&lt;li&gt;Update the theme/pages.&lt;/li&gt;
+&lt;li&gt;Glance at your browser window to see changes.&lt;/li&gt;
+&lt;li&gt;Return to step 4.&lt;/li&gt;
+&lt;/ol&gt;
+
 &lt;h3 id=&#34;contributing&#34;&gt;Contributing&lt;/h3&gt;
 
 &lt;ol&gt;
