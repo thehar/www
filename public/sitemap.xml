@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://thehar.com/post/new_happiness/</loc>
+    <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://thehar.com/about/</loc>
     <lastmod>2017-04-15T00:00:00+00:00</lastmod>
   </url>
@@ -13,12 +18,18 @@
   
   <url>
     <loc>https://thehar.com/post/s3_setup_and_you/</loc>
-    <lastmod>2016-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://thehar.com/tags/aws/</loc>
-    <lastmod>2016-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://thehar.com/tags/books/</loc>
+    <lastmod>2017-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -29,13 +40,13 @@
   
   <url>
     <loc>https://thehar.com/</loc>
-    <lastmod>2017-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://thehar.com/tags/hugo/</loc>
-    <lastmod>2016-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -52,20 +63,26 @@
   </url>
   
   <url>
+    <loc>https://thehar.com/categories/learnings/</loc>
+    <lastmod>2017-04-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://thehar.com/tags/namecheap/</loc>
-    <lastmod>2016-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://thehar.com/post/</loc>
-    <lastmod>2017-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://thehar.com/tags/s3/</loc>
-    <lastmod>2016-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -76,19 +93,25 @@
   
   <url>
     <loc>https://thehar.com/tags/terraform/</loc>
-    <lastmod>2016-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://thehar.com/categories/tools/</loc>
-    <lastmod>2016-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://thehar.com/tags/travis-ci/</loc>
-    <lastmod>2016-04-15T00:00:00+00:00</lastmod>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://thehar.com/tags/yes_i_read/</loc>
+    <lastmod>2017-04-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

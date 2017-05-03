@@ -12,7 +12,7 @@
     <item>
       <title>Setup for Changin Times</title>
       <link>https://thehar.com/post/s3_setup_and_you/</link>
-      <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://thehar.com/post/s3_setup_and_you/</guid>
       <description>
@@ -221,7 +221,7 @@ doesn&amp;rsquo;t allow you to actually &amp;lsquo;sync&amp;rsquo;. Meaning if f
 blog, their deploy step doesn&amp;rsquo;t remove them, and all files are always uploaded
 to the bucket, even if they haven&amp;rsquo;t changed, slowing down the deploy, and costing you money.&lt;/p&gt;
 
-&lt;h3 id=&#34;some-credit-belongs-to-continuousfailure-com-for-this-post&#34;&gt;Some credit belongs to continuousfailure.com for this post&lt;/h3&gt;
+&lt;h4 id=&#34;some-credit-belongs-to-continuousfailure-com-for-this-post&#34;&gt;Some credit belongs to continuousfailure.com for this post&lt;/h4&gt;
 </description>
     </item>
     

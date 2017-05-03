@@ -1,6 +1,7 @@
 +++
 categories = ["tools"]
 date = "2016-04-27"
+draft = false
 tags = ["aws", "s3", "hugo", "terraform","travis-ci", "namecheap"]
 title = "Setup for Changin Times"
 

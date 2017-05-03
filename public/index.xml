@@ -7,8 +7,43 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2017 | Follow on &lt;a href=&#34;https://twitter.com/thehar&#34; target=&#34;_blank&#34;&gt;Twitter&lt;/a&gt; | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Sat, 15 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Apr 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://thehar.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Learning life through experience</title>
+      <link>https://thehar.com/post/new_happiness/</link>
+      <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/post/new_happiness/</guid>
+      <description>
+
+&lt;p&gt;So, I am currently reading &lt;code&gt;Good to Great: Why Some Companies Make the Leap&lt;/code&gt;, by Jim Collins. Upwork&amp;rsquo;s SVP of Engineering suggested this book to engineering staff and it&amp;rsquo;s been a very interesting read during my trip.  In just a short time, I&amp;rsquo;ve grown to really admire him as a very valuable and intelligent person.  Flying back home currently and I notice there are some pretty great communications to motivate through struggle.&lt;/p&gt;
+
+&lt;p&gt;Without struggle we can&amp;rsquo;t learn. With struggle comes growth. Life is about learning and living your truth.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;We are working too hard. Do not panic.
+Our darkest moments provide a fantastic time for us to learn
+because whatever we do from here can&#39;t make matters worse but
+it might make it better.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Work smarter, not harder.  This is how successful and happy people live.  I learned this very valuable lesson on this trip to Europe.&lt;/p&gt;
+
+&lt;h2 id=&#34;other-books-recommended&#34;&gt;Other books recommended:&lt;/h2&gt;
+
+&lt;p&gt;Difficult Conversations - Douglas Stone&lt;br /&gt;
+Emotional Intelligence - Daniel Goleman&lt;br /&gt;
+Working with Emotional Intelligence - Daniel Goleman&lt;br /&gt;
+Destructive Emotions: How Can We Overcome Them? A Scientific Dialogue with the Dalai Lama - Daniel Goleman&lt;/p&gt;
+
+&lt;p&gt;I look forward to sharing more of my incredible journey these past two weeks and continued career learning.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;thehar&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>About Harley</title>
@@ -33,7 +68,8 @@
 
 &lt;p&gt;Have questions or suggestions? Feel free to &lt;a href=&#34;https://github.com/thehar/www/issues/new&#34;&gt;open an issue on GitHub&lt;/a&gt; or &lt;a href=&#34;https://twitter.com/thehar&#34;&gt;ask me on Twitter&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Thanks for reading!&lt;/p&gt;
+&lt;p&gt;Thanks for reading!
+- thehar&lt;/p&gt;
 </description>
     </item>
     
@@ -45,11 +81,11 @@
       <guid>https://thehar.com/post/changin_times/</guid>
       <description>
 
-&lt;p&gt;HELLLOOOO&lt;/p&gt;
+&lt;p&gt;Howdy y&amp;rsquo;all!&lt;/p&gt;
 
-&lt;p&gt;It all started with a random late night at Upwork preparing for a massive site &amp;ldquo;forklift&amp;rdquo; to AWS from our very outdated datacenter.  I knew vacation would be needed after said migration. So I booked and began my 15 day vacation to Iceland, Germany &amp;amp; Spain a few days after 48 hours of zero downtime.  On my flight to Germany, I decided to re-launch all of thehar.com into a static site and to &lt;code&gt;dogfood&lt;/code&gt; it myself.&lt;/p&gt;
+&lt;p&gt;The basis for this new design and adventure of automation all started with a random late night at Upwork preparing for a massive site &amp;ldquo;forklift&amp;rdquo; to AWS from our very outdated datacenter.  I knew vacation would be needed after said migration. So I booked and began my 15 day vacation to Iceland, Germany &amp;amp; Spain for a few days after 48 hours of zero downtime.  On my flight to Germany, I decided to re-launch all of thehar.com into a static site and to &lt;code&gt;dog food&lt;/code&gt; it myself.&lt;/p&gt;
 
-&lt;p&gt;Lets get started.  First things first, DNS. Cloudflare offers a free service tier and will terminate SSL for you.  Sure there&amp;rsquo;s &lt;code&gt;LetsEncrypt&lt;/code&gt;, but this is more fun and you can make your site more robust in the future.  Lets make Cloudflare authoritative for the entire domain and proxy off www/non-www to S3.  I&amp;rsquo;d like to not worry about &lt;code&gt;uploading&lt;/code&gt; or &lt;code&gt;removing&lt;/code&gt; content and re-generating all the static content all the time, so lets use AWS Lambda to do our dirty work.  Lamba will do all of the things you tell it to in AWS without server(s) or will orchestrate EC2 compute nodes for you. The biggest thing here is that you pay for the &lt;em&gt;time&lt;/em&gt; spent reacting or processing.  You don&amp;rsquo;t have to turn up completely new EC2 nodes or use Chef (like I normally would).&lt;/p&gt;
+&lt;p&gt;Lets get started.  First things first, DNS. Cloudflare offers a free service tier and will terminate SSL for you.  Sure there&amp;rsquo;s &lt;code&gt;LetsEncrypt&lt;/code&gt;, but this is more fun and you can make your site more robust in the future.  Lets make Cloudflare authoritative for the entire domain and proxy off www/non-www to S3.  I&amp;rsquo;d like to not worry about &lt;code&gt;uploading&lt;/code&gt; or &lt;code&gt;removing&lt;/code&gt; content and re-generating all the static content all the time, so lets use AWS Lambda to do our dirty work.  Lambda will do all of the things you tell it to in AWS &amp;ldquo;without server(s)&amp;rdquo;&amp;rdquo; or will orchestrate things for you. The biggest thing here is that you pay for the &lt;em&gt;time&lt;/em&gt; spent reacting or processing.  You don&amp;rsquo;t have to turn up completely new EC2 nodes or use Chef (like I normally would).&lt;/p&gt;
 
 &lt;p&gt;In order to get this working, we&amp;rsquo;ll need to have an &lt;code&gt;input&lt;/code&gt; bucket in S3 that you can put your non-generated assets into.  I suggest &lt;code&gt;input.domainname.com&lt;/code&gt; just for ease of remembering what the hell these things are when you open S3&amp;rsquo;s console.  Next you&amp;rsquo;ll need to create two buckets in S3 to serve up &lt;code&gt;www.domainname.com&lt;/code&gt; and &lt;code&gt;domainname.com&lt;/code&gt;.  I prefer to keep things on the root domain and not serve up www traffic to everyone, although you can re-direct however you&amp;rsquo;d like.  One bucket needs to forward to the other in some shape or form S3&amp;rsquo;s silliness.&lt;/p&gt;
 
@@ -59,18 +95,9 @@
 
 &lt;h3 id=&#34;dependencies&#34;&gt;Dependencies&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;[Homebrew]
-*  brew install awscli npm PyYAML make
-*  brew cask install hugo
-
-[Cloudflare]
-* ROOT DNS
-* www.ROOT DNS
-
-[AWS]
-* IAM role for Lamba functions
-* Lamba function to add/remove
-* S3 buckets
+&lt;pre&gt;&lt;code&gt;Homebrew
+Cloudflare
+Amazon Web Services (AWS)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;When you&amp;rsquo;re ready to test out your changes and run a local web server, feel free to open Terminal.app and run:&lt;/p&gt;
@@ -84,23 +111,23 @@
 -1313 means to serve everything on port 1313.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;troubleshooting-hugo-sites&#34;&gt;Troubleshooting hugo sites&lt;/h3&gt;
+&lt;h3 id=&#34;troubleshooting-your-hugo-site&#34;&gt;Troubleshooting your hugo site&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Purge the public/ directory.&lt;/li&gt;
 &lt;li&gt;Run the built in web server in watch mode.&lt;/li&gt;
 &lt;li&gt;Open your site in a browser.&lt;/li&gt;
-&lt;li&gt;Update the theme/pages.&lt;/li&gt;
+&lt;li&gt;Update the theme/content.&lt;/li&gt;
 &lt;li&gt;Glance at your browser window to see changes.&lt;/li&gt;
-&lt;li&gt;Return to step 4.&lt;/li&gt;
+&lt;li&gt;Rinse/repeat step 4.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id=&#34;contributing&#34;&gt;Contributing&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Create a local branch to push to Github.&lt;/li&gt;
+&lt;li&gt;Create a local branch to push to Github: &lt;code&gt;git checkout -b new_post_branch&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Create a new issue on &lt;a href=&#34;https://www.github.com/thehar/www/issues/new&#34;&gt;https://www.github.com/thehar/www/issues/new&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Push your branch to Github and cre&lt;/li&gt;
+&lt;li&gt;Push your branch to Github: &lt;code&gt;git push origin new_post_branch&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Create a pull request &lt;a href=&#34;https://www.github.com/thehar/www/pr/new&#34;&gt;https://www.github.com/thehar/www/pr/new&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
@@ -109,7 +136,7 @@
     <item>
       <title>Setup for Changin Times</title>
       <link>https://thehar.com/post/s3_setup_and_you/</link>
-      <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://thehar.com/post/s3_setup_and_you/</guid>
       <description>
@@ -318,7 +345,7 @@ doesn&amp;rsquo;t allow you to actually &amp;lsquo;sync&amp;rsquo;. Meaning if f
 blog, their deploy step doesn&amp;rsquo;t remove them, and all files are always uploaded
 to the bucket, even if they haven&amp;rsquo;t changed, slowing down the deploy, and costing you money.&lt;/p&gt;
 
-&lt;h3 id=&#34;some-credit-belongs-to-continuousfailure-com-for-this-post&#34;&gt;Some credit belongs to continuousfailure.com for this post&lt;/h3&gt;
+&lt;h4 id=&#34;some-credit-belongs-to-continuousfailure-com-for-this-post&#34;&gt;Some credit belongs to continuousfailure.com for this post&lt;/h4&gt;
 </description>
     </item>
     
