@@ -1,14 +1,22 @@
 language: go
 go:
-- 1.2
+  - 1.7.6
+  - 1.8.3
+  - tip
+os:
+  - linux
+matrix:
+  allow_failures:
+    - go: tip
+  fast_finish: true
 branches:
   only:
   - master
+
 before_install:
 - export PATH=$HOME/gopath/bin:$PATH
 - sudo apt-get install s3cmd
-- go get -u -v github.com/gohugoio/hugo
-- python --version
+- go get -u github.com/gohugoio/hugo
 script:
 - git rev-parse HEAD > version
 - hugo
