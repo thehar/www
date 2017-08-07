@@ -1,10 +1,26 @@
 language: go
-install: go get -v github.com/spf13/hugo
-script: 
-  - hugo
-  - python --version
-  - sudo pip install s3cmd
-  - s3cmd sync --delete-removed -P -M -r public/ s3://thehar.com/
+go:
+- 1.2
+branches:
+  only:
+  - master
+before_install:
+- export PATH=$HOME/gopath/bin:$PATH
+- sudo apt-get install s3cmd
+- go get -v github.com/spf13/hugo
+- python --version
+script:
+- go get ./...
+- git rev-parse HEAD > version
+- hugo
+after_success:
+- sed -i "s|SECRET_KEY|$AWS_SECRET_ACCESS_KEY|" .s3cfg
+- sed -i "s/ACCESS_KEY/$AWS_ACCESS_KEY_ID/" .s3cfg
+- s3cmd -c .s3cfg sync --delete-removed -P -M -r public/ s3://thehar.com/
 notifications:
-    email:
-        on_failure: always
+  email:
+    on_failure: always
+env:
+  global:
+  - secure: cbIr3F67Dp8V7ED0yv1VkwMD5KPHvwgvbR+5SIhtNuPtZXiOLt1i9cUSyvylu9Vric6FIntjdfk8+v597jEmAzooiqQtmTltKjV8+OkWSCon1di6N48JZ6gpjGIRex3+iP4RkMw5NIo2sBrLCLvLRSk40ktYtI/b+Nh+IjCDkkJDI0XweMkCFGYPgSzmPKNKjotXvyXvi8XF2uh5F8VDA63eKd560LnM6bygCsFyfYSqesPTOWM7mFIdHQeCmb+cwDvHA7xPZMsOi94NKek945X9L1JyLYi52yxlHAbDHrlS/Y3m0yYzfp2BJUFJVA/fIsinZ+lAnnTzfLDqMS8LA5EUWcaQxiaNe1DmfNjyM9LstwK+CAj2W9SirNIVJZ8hX6vP+W1QEBSt/ZaGUJZ4HCRl0sX4vhD0mb1Fk7j303EjIjcY4dc49ntCvNiar8JSUn8pKoIL+tr/vC8XFf+G5bIyHMuxmk2Wjw4QOSG+pjbjeYLkhwurLTWFc3oBXrRs47Wv2Agw58D4aJqXzPBvQEP8ozFdObiMEGmJcMsdet0zHjw66XWc6K+gd4OFADQUFxGXg8TPOZulJF8jqmZ/ucP2+mUDMrEiPx1db5Dg7hTHJx7A6TbmzTgXM8k4bxVs4El25J1C+VtD64Ds1K0Nf7IZTLhtRx0nn9QUTOIzsIg=
+  - secure: KNrLUhabBTCptvO6ceOpLTVT7WRyywUkx8SmLg6fryRMH3Y9k1DXoiLykuROHddg1BncmGWmJA+pZYGxFHVhN4z/DOX6A+xwk1/VtWIK7GIQHzQGXTHkXBSCibtux2VIEJIxYxnWMNsJISBWFiODrRf0hUP+wu8oc+361wjPI8O091xieZ84TLTqXrMExs1n6B16RmNRO93/NBoAKHoOwEhT0WB1F1mxDf/3uGCRN6ji4vX7TczzMg8ldvuQg1xQ2DOo341Aq7Z/Tg22y73aI2RjpekyAH7XEZeGJ6+ZBy0XPc8OBhcN+EJpEFe3IlE/YiZ0RXYj5V6C/ttLhJGL2HPKDP75+rhBSpvjVIEoQNuoijypJ8VTzZmDsUedlrk505dr7dwpNgF5ug4X80BvrDx+H/TurgJ38Ict/Ehb4ZhHY0DQPEfC2z7b1Do71iZDAgxYo5OFtOceWd6TxrOfOD3KOWMwGDJZnUJaqE62Xb9JnnxU8N5IFjs38RtT5hT1rX9gZPp5fccyrrc6vv1TpHHz80CJrbi+Suc/Y6WXaeePjhIOto0K3pEziKueFcATAghKXTViluOUE/MJI1TE4hh2iW7vWB87NV/q31SUedwzPxKectS6Nr6g/Iaab7QSVoCBBrPMGMedK2jAI2LF+rabY9YqzgjpeFamEt3xBdQ=
