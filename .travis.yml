@@ -10,7 +10,6 @@ before_install:
 - go get -v github.com/spf13/hugo
 - python --version
 script:
-- go get ./...
 - git rev-parse HEAD > version
 - hugo
 after_success:
