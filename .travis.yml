@@ -7,7 +7,7 @@ branches:
 before_install:
 - export PATH=$HOME/gopath/bin:$PATH
 - sudo apt-get install s3cmd
-- go get -v github.com/spf13/hugo
+- go get -u -v github.com/gohugoio/hugo
 - python --version
 script:
 - git rev-parse HEAD > version
