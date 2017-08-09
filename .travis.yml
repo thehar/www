@@ -21,12 +21,13 @@ script:
 notifications:
   email:
     on_failure: always
+
 deploy:
   provider: s3
   access_key_id: AKIAJNQCZJKGPPNCRK6Q
   secret_access_key:
     secure: DAH3V7q1UVu/x3plfmGy12Oom1P07JkrN780XHpOFGmfQnKFRrKxT5uR2EBfZjq8q+QfdEt+u2RDI0Ka8mCLr1iRDvhQeXiRylFMtOgofRA77uDZSOX76Exx2KsHHUWlVKb1qW0hl6arcoTYTBW4R/6Ljz+zxOImp3fSc8K6skTgVWF6LYSfPfJhRq/6KxFS/HhZONSwKagx0F6ymVdAQWGZadXVu6k+09exUH9tpUtLEmHSbpTTcXLcMMBYpaLkkA+Bl13M8mKmZvv9r8uEWx+uNIEdm4NAgUVxw+bk4A8uoHlk3FnJChu8Kx+m9qP/wyK+ZeGoy6DF+NY+BKXmf1YH3mfFouD/Z1EyAerD9YVlCrkOhqEJa50VYf/wzcbRcMZrF8V1ddDwRFI8x3SdTRmQgfU8I26OG/5E4pP9ykknSMWNrb3W8Ucz8h6kCfTfP8ggB4uYXojKXiC3oMyun2g4y7C09mqVMRV8537/mjt5bDRPIDM4dsUTREH1KpN13nlZ0Vdx1AWsd3tRE6mtfOM8VbgI9zOZIjdDIy1ovVuj1RBnVrQocJ6gcz4fOrf530blmxf0TCxMTiFb6/0fhqy360EUgk42nPp5e/qd3mE02IeRBr0nRya/8t+SsOtQyTKMgIs4dNwhJv6HC2whnxNbXu48NPZx1vdAYT06yrQ=
-  bucket: input.thehar.com
+  bucket: www.thehar.com
   acl: bucket_owner_full_control
   on:
     repo: thehar/www
