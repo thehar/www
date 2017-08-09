@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Harley Alaniz | DevOps Architect</title>
+    <link>https://thehar.com/tags/</link>
+    <description>Recent content in Tags on Harley Alaniz | DevOps Architect</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2017 | Follow on &lt;a href=&#34;https://twitter.com/thehar&#34; target=&#34;_blank&#34;&gt;Twitter&lt;/a&gt; | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://thehar.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Aws</title>
+      <link>https://thehar.com/tags/aws/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://thehar.com/tags/hugo/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Innerthoughts</title>
+      <link>https://thehar.com/tags/innerthoughts/</link>
+      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/tags/innerthoughts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Namecheap</title>
+      <link>https://thehar.com/tags/namecheap/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/tags/namecheap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>S3</title>
+      <link>https://thehar.com/tags/s3/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/tags/s3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Terraform</title>
+      <link>https://thehar.com/tags/terraform/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/tags/terraform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Travis Ci</title>
+      <link>https://thehar.com/tags/travis-ci/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/tags/travis-ci/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

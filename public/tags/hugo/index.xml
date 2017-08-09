@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Harley Alaniz | DevOps Architect</title>
+    <link>https://thehar.com/tags/hugo/</link>
+    <description>Recent content in Hugo on Harley Alaniz | DevOps Architect</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2017 | Follow on &lt;a href=&#34;https://twitter.com/thehar&#34; target=&#34;_blank&#34;&gt;Twitter&lt;/a&gt; | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://thehar.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setup for Changin Times</title>
+      <link>https://thehar.com/post/s3_setup_and_you/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/post/s3_setup_and_you/</guid>
+      <description>Step 0) Get a domain name from NameCheap. NameCheap This is a pretty great registrar and they don&amp;rsquo;t support LGBT hating causes like GoDaddy.
+Step 1) Setup a Github Account and Organization. It&amp;rsquo;s pretty simple - you signup, create an organization, and then create a new git repository under that github organization.
+If this is truly your first time ever using github you&amp;rsquo;re going to have to create an ssh key-pair, which is used to authenticate you so you can push up your code.</description>
+    </item>
+    
+  </channel>
+</rss>

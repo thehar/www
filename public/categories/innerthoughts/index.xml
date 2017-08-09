@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Innerthoughts on Harley Alaniz | DevOps Architect</title>
+    <link>https://thehar.com/categories/innerthoughts/</link>
+    <description>Recent content in Innerthoughts on Harley Alaniz | DevOps Architect</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2017 | Follow on &lt;a href=&#34;https://twitter.com/thehar&#34; target=&#34;_blank&#34;&gt;Twitter&lt;/a&gt; | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <lastBuildDate>Sat, 15 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://thehar.com/categories/innerthoughts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Better, faster, stronger</title>
+      <link>https://thehar.com/post/changin_times/</link>
+      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/post/changin_times/</guid>
+      <description>Howdy y&amp;rsquo;all!
+The basis for this new design and adventure of automation all started with a random late night at Upwork preparing for a massive site &amp;ldquo;forklift&amp;rdquo; to AWS from our very outdated datacenter. I knew vacation would be needed after said migration. So I booked and began my 15 day vacation to Iceland, Germany &amp;amp; Spain for a few days after 48 hours of zero downtime. On my flight to Germany, I decided to re-launch all of thehar.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="workhack, git, notes, innerthoughts, tools" name="keywords">
+<meta content="Harley Alaniz" name="author">
+<meta property="og:title" content="Setup for Changin Times - Harley Alaniz | DevOps Architect">
+<meta property="og:url" content="https://thehar.com/post/s3_setup_and_you/">
+<meta property="og:description" content="Openly gay DevOps engineer, based in San Francisco">
+<meta property="og:type" content="website" />
+<title>Setup for Changin Times | Harley Alaniz | DevOps Architect</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="https://thehar.com/css/style.css">
+<link rel="shortcut icon" href="https://thehar.com/wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://thehar.com"><h1 class="title is-4">Harley Alaniz | DevOps Architect</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/thehar" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/thehar" target="_blank">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/thehar" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Setup for Changin Times</h1>
+    <h2 class="subtitle is-5">April 27, 2016 by Harley Alaniz</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/aws">aws</a>
+    
+        <a class="button is-link" href="/tags/s3">s3</a>
+    
+        <a class="button is-link" href="/tags/hugo">hugo</a>
+    
+        <a class="button is-link" href="/tags/terraform">terraform</a>
+    
+        <a class="button is-link" href="/tags/travis-ci">travis-ci</a>
+    
+        <a class="button is-link" href="/tags/namecheap">namecheap</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<h1 id="step-0-get-a-domain-name-from-namecheap">Step 0) Get a domain name from NameCheap.</h1>
+
+<p><a href="https://www.namecheap.com">NameCheap</a> This is a pretty great registrar and they don&rsquo;t support LGBT hating causes like GoDaddy.</p>
+
+<h1 id="step-1-setup-a-github-account-and-organization">Step 1) Setup a Github Account and Organization.</h1>
+
+<p>It&rsquo;s pretty simple - you <a href="https://github.com/join">signup</a>,
+<a href="https://help.github.com/articles/creating-a-new-organization-from-scratch/">create an organization</a>,
+and then <a href="https://help.github.com/articles/creating-a-new-repository/">create a new git repository</a>
+under that github organization.</p>
+
+<p>If this is truly your first time ever using github you&rsquo;re going to have to
+<a href="https://help.github.com/articles/generating-ssh-keys/">create an ssh key-pair</a>,
+which is used to authenticate you so you can push up your code.</p>
+
+<h1 id="step-2-start-blogging-locally-with-hugo">Step 2) Start blogging locally with Hugo.</h1>
+
+<p><a href="https://github.com/spf13/hugo">Hugo</a> is a more modern, much faster, version of
+<a href="https://github.com/jekyll/jekyll">Jekyll</a>.</p>
+
+<p>The main advantage I see for using Hugo over Jekyll is that Hugo makes it much
+easier to build static websites that are not blogs, and you don&rsquo;t need ruby to
+build website - you simply need a static Go binary.</p>
+
+<p>Follow <a href="http://gohugo.io/overview/introduction/">this introduction</a> and within
+two minutes you should be well on your way to setting up a blog.</p>
+
+<pre><code>Side funny note: Don't use Wordpress, ever. Unless you want to pay to host it
+with wordpress.com.  It's a pile of crap and you have a much larger attack vector
+to deal with when you host a WP site yourself. (Feel free to email and ask about this)
+</code></pre>
+
+<h1 id="step-3-create-an-aws-account">Step 3) Create an AWS Account.</h1>
+
+<p>AWS is a great way to serve up your website for pennies in the first year.  You get
+a free tier.</p>
+
+<p>But for now simply create a new account, and figure out away to get yourself
+some admin keys (AWS_ACCESS_KEY and AWS_SECRET_KEY) because you will need these
+to setup your AWS account to host this blog.</p>
+
+<p>You will need to install <code>aws-cli</code> in order to run <code>aws configure</code> and maintain
+your keys locally correctly.  Please see the [Changin Times] entry from 04-15-2017.</p>
+
+<h1 id="step-4-use-a-terraform-script-to-setup-your-aws-account-for-the-blog">Step 4) Use a Terraform script to setup your AWS account for the blog.</h1>
+
+<p>I built you out a simple <a href="https://terraform.io/">Terraform</a> script which you
+can use to create all the required things to host a website in S3.</p>
+
+<p>I personally use <code>us-west-2</code>, Oregon&rsquo;s AWS region, because it is the cheapest and
+you get all the shiny new products.</p>
+
+<p>Here is the <a href="https://github.com/thehar/www/blob/master/tf/setup.tf">script</a>:</p>
+
+<pre><code class="language-terraform">provider &quot;aws&quot; {
+  access_key = &quot;AWS_ACCESS_KEY&quot;
+  secret_key = &quot;AWS_SECRET_KEY&quot;
+  region = &quot;us-west-2&quot;
+}
+
+variable &quot;domain_name&quot; {
+  default = &quot;domain.com&quot;
+}
+
+resource &quot;aws_s3_bucket&quot; &quot;blog&quot; {
+  bucket = &quot;${var.domain_name}&quot;
+  region = &quot;us-west-2&quot;
+  acl = &quot;public-read&quot;
+  policy = &lt;&lt;EOF
+{
+  &quot;Version&quot;: &quot;2012-10-17&quot;,
+  &quot;Statement&quot;: [{
+    &quot;Sid&quot;: &quot;AddPerm&quot;,
+    &quot;Effect&quot;: &quot;Allow&quot;,
+    &quot;Principal&quot;: &quot;*&quot;,
+    &quot;Action&quot;: &quot;s3:GetObject&quot;,
+    &quot;Resource&quot;: &quot;arn:aws:s3:::${var.domain_name}/*&quot;
+  }]
+}
+EOF
+
+  website {
+    index_document = &quot;index.html&quot;
+    error_document = &quot;error.html&quot;
+  }
+}
+
+resource &quot;aws_s3_bucket&quot; &quot;wwwblog&quot; {
+  bucket = &quot;www.${var.domain_name}&quot;
+  region = &quot;us-west-2&quot;
+  acl = &quot;public-read&quot;
+  website {
+    redirect_all_requests_to = &quot;${var.domain_name}&quot;
+  }
+}
+
+
+resource &quot;aws_route53_record&quot; &quot;blog&quot; {
+  zone_id = &quot;${aws_route53_zone.primary.zone_id}&quot;
+  name = &quot;${var.domain_name}&quot;
+  type = &quot;A&quot;
+  alias {
+    name = &quot;${aws_s3_bucket.blog.website_domain}&quot;
+    zone_id = &quot;${aws_s3_bucket.blog.hosted_zone_id}&quot;
+    evaluate_target_health = true
+  }
+}
+
+resource &quot;aws_iam_user&quot; &quot;blog_deploy&quot; {
+  name = &quot;${var.domain_name}_blog_deploy&quot;
+  path = &quot;/s3/&quot;
+}
+
+resource &quot;aws_iam_access_key&quot; &quot;blog_deploy&quot; {
+  user = &quot;${aws_iam_user.blog_deploy.name}&quot;
+}
+
+resource &quot;aws_iam_user_policy&quot; &quot;blog_deploy_rw&quot; {
+  name = &quot;${var.domain_name}_rw&quot;
+  user = &quot;${aws_iam_user.blog_deploy.name}&quot;
+  policy = &lt;&lt;EOF
+{
+  &quot;Statement&quot;: [{
+    &quot;Effect&quot;: &quot;Allow&quot;,
+    &quot;Action&quot;: [
+      &quot;s3:ListBucket&quot;,
+      &quot;s3:GetBucketLocation&quot;,
+      &quot;s3:ListBucketMultipartUploads&quot;
+    ],
+    &quot;Resource&quot;: &quot;arn:aws:s3:::${var.domain_name}&quot;,
+    &quot;Condition&quot;: {}
+  }, {
+    &quot;Effect&quot;: &quot;Allow&quot;,
+    &quot;Action&quot;: [
+      &quot;s3:AbortMultipartUpload&quot;,
+      &quot;s3:DeleteObject&quot;,
+      &quot;s3:DeleteObjectVersion&quot;,
+      &quot;s3:GetObject&quot;,
+      &quot;s3:GetObjectAcl&quot;,
+      &quot;s3:GetObjectVersion&quot;,
+      &quot;s3:GetObjectVersionAcl&quot;,
+      &quot;s3:PutObject&quot;,
+      &quot;s3:PutObjectAcl&quot;,
+      &quot;s3:PutObjectAclVersion&quot;
+    ],
+    &quot;Resource&quot;: &quot;arn:aws:s3:::${var.domain_name}/*&quot;,
+    &quot;Condition&quot;: {}
+  }, {
+    &quot;Effect&quot;: &quot;Allow&quot;,
+    &quot;Action&quot;: &quot;s3:ListAllMyBuckets&quot;,
+    &quot;Resource&quot;: &quot;*&quot;,
+    &quot;Condition&quot;: {}
+  }]
+}
+EOF
+}
+</code></pre>
+
+<p>Before you can use this you&rsquo;ll need to substitute out <code>AWS_ACCESS_KEY</code>,
+<code>AWS_SECRET_KEY</code>, and <code>domain.com</code> with the appropriate values.</p>
+
+<p>If you really are against using Terraform to setup this configuration you can
+of course always use <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html">the guide</a>
+from Amazon directly.</p>
+
+<p>Don&rsquo;t worry, we&rsquo;ll have more blogs about Terraform and other AWS + CM tools.</p>
+
+<h1 id="step-5">Step 5)</h1>
+
+<h1 id="step-6-get-a-travis-ci-account">Step 6) Get a Travis CI account.</h1>
+
+<p>You might want to follow <a href="https://docs.travis-ci.com/user/for-beginners">this guide</a>
+to get your feet wet with Travis CI.</p>
+
+<h1 id="step-7-add-a-travis-yml-to-your-blog-repository">Step 7) Add a .travis.yml to your blog repository.</h1>
+
+<p>Here is a basic <code>.travis.yml</code> you&rsquo;ll want to use which will publish your blog
+upon every push to your repository.</p>
+
+<pre><code class="language-yaml">language: go
+install: go get -v github.com/spf13/hugo
+script:
+  - hugo
+  - python --version
+  - sudo pip install s3cmd
+  - s3cmd sync --delete-removed -P -M -r public/ s3://thehar.com/
+notifications:
+    email:
+        on_failure: always
+</code></pre>
+
+<p>Then, <a href="https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings">as described here</a>,
+you will want to add the <code>AWS_ACCESS_KEY</code> and <code>AWS_SECRET_KEY</code> keys of the S3 user,
+which was created via the Terraform script, as build environment variables in the
+Travis CI project.</p>
+
+<p>The keys can be found in the <code>*.tfstate</code> file created when the Terraform script
+was applied.</p>
+
+<p>Note, we chose to use s3cmd because the provided Travis CI S3 deploy step
+doesn&rsquo;t allow you to actually &lsquo;sync&rsquo;. Meaning if files are removed from your
+blog, their deploy step doesn&rsquo;t remove them, and all files are always uploaded
+to the bucket, even if they haven&rsquo;t changed, slowing down the deploy, and costing you money.</p>
+
+<h4 id="some-credit-belongs-to-continuousfailure-com-for-this-post">Some credit belongs to continuousfailure.com for this post</h4>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fthehar.com%2fpost%2fs3_setup_and_you%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fthehar.com%2fpost%2fs3_setup_and_you%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fthehar.com%2fpost%2fs3_setup_and_you%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Setup%20for%20Changin%20Times - https%3a%2f%2fthehar.com%2fpost%2fs3_setup_and_you%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fthehar.com%2fpost%2fs3_setup_and_you%2f&title=Setup%20for%20Changin%20Times" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'thehar';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | Follow on <a href="https://twitter.com/thehar" target="_blank">Twitter</a> | <a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme</a> & <a href="http://gohugo.io" target="_blank">Hugo</a> ♥</p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/ruby.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/python.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/bash.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/dockerfile.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-396130-18', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>

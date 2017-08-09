@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="workhack, git, notes, innerthoughts, tools" name="keywords">
+<meta content="Harley Alaniz" name="author">
+<meta property="og:title" content="Better, faster, stronger - Harley Alaniz | DevOps Architect">
+<meta property="og:url" content="https://thehar.com/post/changin_times/">
+<meta property="og:description" content="Openly gay DevOps engineer, based in San Francisco">
+<meta property="og:type" content="website" />
+<title>Better, faster, stronger | Harley Alaniz | DevOps Architect</title>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<link rel="stylesheet" href="https://thehar.com/css/style.css">
+<link rel="shortcut icon" href="https://thehar.com/wave.ico">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+
+</head>
+
+<body>
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://thehar.com"><h1 class="title is-4">Harley Alaniz | DevOps Architect</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/thehar" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/thehar" target="_blank">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/thehar" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Better, faster, stronger</h1>
+    <h2 class="subtitle is-5">April 15, 2017 by Harley Alaniz</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/innerthoughts">innerthoughts</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<p>Howdy y&rsquo;all!</p>
+
+<p>The basis for this new design and adventure of automation all started with a random late night at Upwork preparing for a massive site &ldquo;forklift&rdquo; to AWS from our very outdated datacenter.  I knew vacation would be needed after said migration. So I booked and began my 15 day vacation to Iceland, Germany &amp; Spain for a few days after 48 hours of zero downtime.  On my flight to Germany, I decided to re-launch all of thehar.com into a static site and to <code>dog food</code> it myself.</p>
+
+<p>Lets get started.  First things first, DNS. Cloudflare offers a free service tier and will terminate SSL for you.  Sure there&rsquo;s <code>LetsEncrypt</code>, but this is more fun and you can make your site more robust in the future.  Lets make Cloudflare authoritative for the entire domain and proxy off www/non-www to S3.  I&rsquo;d like to not worry about <code>uploading</code> or <code>removing</code> content and re-generating all the static content all the time, so lets use AWS Lambda to do our dirty work.  Lambda will do all of the things you tell it to in AWS &ldquo;without server(s)&rdquo;&rdquo; or will orchestrate things for you. The biggest thing here is that you pay for the <em>time</em> spent reacting or processing.  You don&rsquo;t have to turn up completely new EC2 nodes or use Chef (like I normally would).</p>
+
+<p>In order to get this working, we&rsquo;ll need to have an <code>input</code> bucket in S3 that you can put your non-generated assets into.  I suggest <code>input.domainname.com</code> just for ease of remembering what the hell these things are when you open S3&rsquo;s console.  Next you&rsquo;ll need to create two buckets in S3 to serve up <code>www.domainname.com</code> and <code>domainname.com</code>.  I prefer to keep things on the root domain and not serve up www traffic to everyone, although you can re-direct however you&rsquo;d like.  One bucket needs to forward to the other in some shape or form S3&rsquo;s silliness.</p>
+
+<h2 id="testing-hugo-locally">Testing Hugo locally:</h2>
+
+<p>I make the assumption that all of your local development is done on MacOS, 10.12.3.</p>
+
+<h3 id="dependencies">Dependencies</h3>
+
+<pre><code>Homebrew
+Cloudflare
+Amazon Web Services (AWS)
+</code></pre>
+
+<p>When you&rsquo;re ready to test out your changes and run a local web server, feel free to open Terminal.app and run:</p>
+
+<p><code>hugo server -wvD --port 1313</code>.</p>
+
+<pre><code>Options tagged off demonizing hugo above:
+-w means to watch the directory and recreate as needed.
+-v means to verbosely state what is going on in the web server.
+-D means to include drafted posts you may have created.
+-1313 means to serve everything on port 1313.
+</code></pre>
+
+<h3 id="troubleshooting-your-hugo-site">Troubleshooting your hugo site</h3>
+
+<ol>
+<li>Purge the public/ directory.</li>
+<li>Run the built in web server in watch mode.</li>
+<li>Open your site in a browser.</li>
+<li>Update the theme/content.</li>
+<li>Glance at your browser window to see changes.</li>
+<li>Rinse/repeat step 4.</li>
+</ol>
+
+<h3 id="contributing">Contributing</h3>
+
+<ol>
+<li>Create a local branch to push to Github: <code>git checkout -b new_post_branch</code></li>
+<li>Create a new issue on <a href="https://www.github.com/thehar/www/issues/new">https://www.github.com/thehar/www/issues/new</a></li>
+<li>Push your branch to Github: <code>git push origin new_post_branch</code></li>
+<li>Create a pull request <a href="https://www.github.com/thehar/www/pr/new">https://www.github.com/thehar/www/pr/new</a></li>
+</ol>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fthehar.com%2fpost%2fchangin_times%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=https%3a%2f%2fthehar.com%2fpost%2fchangin_times%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fthehar.com%2fpost%2fchangin_times%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Better%2c%20faster%2c%20stronger - https%3a%2f%2fthehar.com%2fpost%2fchangin_times%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=https%3a%2f%2fthehar.com%2fpost%2fchangin_times%2f&title=Better%2c%20faster%2c%20stronger" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'thehar';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | Follow on <a href="https://twitter.com/thehar" target="_blank">Twitter</a> | <a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme</a> & <a href="http://gohugo.io" target="_blank">Hugo</a> ♥</p>
+  </div>
+</section>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js" integrity="sha256-+bhVTaRmJ/c07eV80nU8gD2cBBF0rYkf1txqXlrbvb0=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/ruby.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/python.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/bash.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/dockerfile.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-396130-18', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>

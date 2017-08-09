@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Harley Alaniz | DevOps Architect</title>
+    <link>https://thehar.com/</link>
+    <description>Recent content on Harley Alaniz | DevOps Architect</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2017 | Follow on &lt;a href=&#34;https://twitter.com/thehar&#34; target=&#34;_blank&#34;&gt;Twitter&lt;/a&gt; | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
+    <lastBuildDate>Sat, 15 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://thehar.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Harley</title>
+      <link>https://thehar.com/about/</link>
+      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/about/</guid>
+      <description>This is a place for me to store all the things I try to remember from work/life/hacking or things I find interesting. Feel free to hit me up with any questions and/or permission to post content.
+Learn more and contribute on GitHub.
+Setup Some fun facts about Hugo:
+ Built in Go Loosely inspired by Jekyll  Have questions or suggestions? Feel free to open an issue on GitHub or ask me on Twitter.</description>
+    </item>
+    
+    <item>
+      <title>Better, faster, stronger</title>
+      <link>https://thehar.com/post/changin_times/</link>
+      <pubDate>Sat, 15 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/post/changin_times/</guid>
+      <description>Howdy y&amp;rsquo;all!
+The basis for this new design and adventure of automation all started with a random late night at Upwork preparing for a massive site &amp;ldquo;forklift&amp;rdquo; to AWS from our very outdated datacenter. I knew vacation would be needed after said migration. So I booked and began my 15 day vacation to Iceland, Germany &amp;amp; Spain for a few days after 48 hours of zero downtime. On my flight to Germany, I decided to re-launch all of thehar.</description>
+    </item>
+    
+    <item>
+      <title>Setup for Changin Times</title>
+      <link>https://thehar.com/post/s3_setup_and_you/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://thehar.com/post/s3_setup_and_you/</guid>
+      <description>Step 0) Get a domain name from NameCheap. NameCheap This is a pretty great registrar and they don&amp;rsquo;t support LGBT hating causes like GoDaddy.
+Step 1) Setup a Github Account and Organization. It&amp;rsquo;s pretty simple - you signup, create an organization, and then create a new git repository under that github organization.
+If this is truly your first time ever using github you&amp;rsquo;re going to have to create an ssh key-pair, which is used to authenticate you so you can push up your code.</description>
+    </item>
+    
+  </channel>
+</rss>
